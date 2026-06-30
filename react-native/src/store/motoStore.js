@@ -70,8 +70,10 @@ export const useMotoStore = create((set, get) => ({
   selectedSpot: null,
   filter: 'all',     // all | covered | dedicated | footpath
   city: 'all',
-  phase: 'map',      // map | detail | add | about
+  phase: 'login',    // login | map | detail | add | about | booking
   reservations: [],
+
+  completeLogin: () => set({ phase: 'map' }),
 
   selectSpot: (id) => {
     const spot = get().spots.find(s => s.id === id) || null;
