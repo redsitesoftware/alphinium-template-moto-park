@@ -71,6 +71,7 @@ export const useMotoStore = create((set, get) => ({
   filter: 'all',     // all | covered | dedicated | footpath
   city: 'all',
   phase: 'map',      // map | detail | add | about
+  reservations: [],
 
   selectSpot: (id) => {
     const spot = get().spots.find(s => s.id === id) || null;
@@ -102,4 +103,8 @@ export const useMotoStore = create((set, get) => ({
 
   getTypeIcon: (type) => TYPE_ICONS[type] || '📍',
   getTypeLabel: (type) => TYPE_LABELS[type] || type,
+
+  addReservation: (reservation) => {
+    set(state => ({ reservations: [reservation, ...state.reservations] }));
+  },
 }));

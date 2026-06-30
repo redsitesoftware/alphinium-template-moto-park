@@ -123,6 +123,9 @@ export default function HomeScreen() {
               <Text style={s.directionsBtnText}>Navigate →</Text>
             </TouchableOpacity>
           </View>
+          <TouchableOpacity style={s.reserveBtn} onPress={() => setPhase('booking')}>
+            <Text style={s.reserveBtnText}>🏍️ Reserve This Spot</Text>
+          </TouchableOpacity>
         </View>
       )}
 
@@ -200,6 +203,8 @@ const s = StyleSheet.create({
   directionsBtn:  { flex: 1, backgroundColor: colors.surface, borderRadius: radius.md,
                     borderWidth: 1, borderColor: colors.cardBorder, padding: spacing.md, alignItems: 'center' },
   directionsBtnText: { color: colors.text, fontWeight: '700', fontSize: 14 },
+  reserveBtn:     { backgroundColor: '#F97316', borderRadius: radius.md, paddingVertical: 12, alignItems: 'center', marginTop: 8 },
+  reserveBtnText: { color: '#FFFFFF', fontWeight: '800', fontSize: 15 },
 
   list:           { flex: 1 },
   listContent:    { paddingHorizontal: spacing.md, paddingBottom: spacing.xl },
